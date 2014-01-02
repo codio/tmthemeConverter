@@ -15,6 +15,12 @@ var options = [
     help: 'Print this help and exit.'
   },
   {
+    names: ['name', 'n'],
+    type: 'string',
+    help: 'Name of the theme. Defaults to the filename that is being converted',
+    helpArg: 'NAME'
+  },
+  {
     names: ['output', 'o'],
     type: 'string',
     help: 'Folder to output the theme. Defaults to the current directory',
@@ -45,7 +51,8 @@ if (!opts._args) {
 // Actual action is happening here:
 var source = opts._args[0];
 var filename = path.basename(source);
-var outputFile = path.join(opts.output, filename.replace(/\.tmtheme/i,  '.css'));
+var filenameOut = opts.name ? opts.name + '.css' : filename.replace(/\.tmtheme/i, '.css');
+var outputFile = path.join(opts.output, filenameOut);
 
 var input = fs.readFile(source, function (err, content) {
   if (err) {
@@ -55,13 +62,13 @@ var input = fs.readFile(source, function (err, content) {
 
   console.log('Read file from: ' + filename);
   var parsed = tm.parse(content.toString());
+  opts.name && (parsed.name = opts.name);
   var cssTheme = cm.create(parsed);
 
   console.log('Writing file to: ' + outputFile);
   console.log(cssTheme);
   fs.writeFile(outputFile, cssTheme);
 });
-
 
 
 
