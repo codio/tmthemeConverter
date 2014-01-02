@@ -18,6 +18,7 @@ var options = [
     names: ['output', 'o'],
     type: 'string',
     help: 'Folder to output the theme. Defaults to the current directory',
+    default: './',
     helpArg: 'OUTPUT'
   }
 ];
