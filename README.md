@@ -2,7 +2,6 @@
 
 This Node script will accept any TextMate Theme and convert it into a plain CSS file, suitable for use with [CodeMirror](http://codemirror.net/).
 
-
 ## Usage
 
 ```bash
@@ -20,6 +19,14 @@ The following options are supported:
 - `-n NAME, --name=NAME` - Name of the theme. Defaults to the filename that is being converted.
 - `-o OUTPUT, --output=OUTPUT` - Folder to output the theme. Defaults to the current directory.
 
+## Add more TextMate-Themes
+```
+git submodule add https://github.com/filmgirl/TextMate-Themes.git "examples"
+git submodule init
+git submodule update
+```
+
+See [TextMate-themes](https://github.com/filmgirl/TextMate-Themes) (unofficial collection) and [TextMate-Theme gallery](http://inkdeep.github.io/TextMate-Themes/)
 
 ## Using in Codio
 
