@@ -1,4 +1,3 @@
-If you have a theme that you would like to see included in [Codio](https://codio.com), then [drop us a line](mailto:help@codio.com) and we will try our best to make it available for you.
 # Textmate to CodeMirror theme converter
 
 This Node script will accept any TextMate Theme and convert it into a plain CSS file, suitable for use with [CodeMirror](http://codemirror.net/).
